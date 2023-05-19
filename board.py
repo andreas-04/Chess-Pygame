@@ -32,15 +32,19 @@ class Board:
         # Get the piece at the start position
         piece = self.board[start_row][start_col]
 
-        # Check if the move is valid using the piece's validate_move method
-        if piece is not None and piece.validate_move(start_row, start_col, end_row, end_col):
-            # Move the piece
-            self.board[start_row][start_col] = None
-            self.board[end_row][end_col] = piece
+        if piece is not None:
+            
+            # Check if the move is valid using the piece's validate_move method
+            if piece.validate_move(start_row, start_col, end_row, end_col):
+                # Move the piece
+                self.board[start_row][start_col] = None
+                self.board[end_row][end_col] = piece
+            else:
+                print("Invalid move!")
         else:
-            print("Invalid move!")
+            print("No piece at the start position!")
 
 myB = Board()
 myB.display()
-myB.move_piece(2,5,3,5)
+myB.move_piece(1,4,2,4)
 myB.display()
