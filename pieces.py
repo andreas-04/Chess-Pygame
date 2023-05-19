@@ -21,24 +21,43 @@ class Pawn(Piece):
         return False
 
 
-white_pawn = Pawn("white")
-print(white_pawn.validate_move(1, 2, 2, 2))  # True
-print(white_pawn.validate_move(2, 2, 3, 2))  # True
-print(white_pawn.validate_move(3, 2, 4, 2))  # False
-# class Rook(Piece):
-#     def __init__(self, color):
-#         super().__init__(color)
+class Rook(Piece):
+    def __init__(self, color):
+        super().__init__(color)
+    def validate_move(self, start_row, start_col, end_row, end_col):
+        if (start_row == end_row and start_col != end_col) or (start_col == end_col and start_row != end_row):            return True
+        return False
 
 # class Knight(Piece):
 #     def __init__(self, color):
 #         super().__init__(color)
+#     def validate_move(self, start_row, start_col, end_row, end_col):
+
 
 # class Bishop(Piece):
 #     def __init__(self, color):
 #         super().__init__(color)
+#     def validate_move(self, start_row, start_col, end_row, end_col):
+
 # class Queen(Piece):
 #     def __init__(self, color):
 #         super().__init__(color)
-# class King(Piece):
-#     def __init__(self, color):
-#         super().__init__(color)
+#     def validate_move(self, start_row, start_col, end_row, end_col):
+
+class King(Piece):
+    def __init__(self, color):
+        super().__init__(color)
+    def validate_move(self, start_row, start_col, end_row, end_col):
+        row_offset = abs(start_row - end_row)
+        col_offset = abs(start_col - end_col)
+        if (row_offset <= 1) and (col_offset <= 1):
+            return True
+        else:
+            return False
+
+
+white_King = King("white")
+print(white_King.color)
+print(white_King.validate_move(1, 2, 3, 2))  # True
+# print(white_pawn.validate_move(2, 2, 3, 2))  # True
+# print(white_pawn.validate_move(3, 2, 4, 2))  # False
