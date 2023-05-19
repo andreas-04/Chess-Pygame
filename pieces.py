@@ -19,7 +19,8 @@ class Pawn(Piece):
                 return True
 
         return False
-
+    def get_symbol(self):
+        return '♙' if self.color == 'white' else '♟'
 
 class Rook(Piece):
     def __init__(self, color):
@@ -28,6 +29,9 @@ class Rook(Piece):
         if (start_row == end_row and start_col != end_col) or (start_col == end_col and start_row != end_row):
              return True
         return False
+    def get_symbol(self):
+        return '♖' if self.color == 'white' else '♜'
+
 
 class Knight(Piece):
     def __init__(self, color):
@@ -39,6 +43,8 @@ class Knight(Piece):
                 return True
         else:
             return False
+    def get_symbol(self):
+            return '♘' if self.color == 'white' else '♞'
 
 class Bishop(Piece):
     def __init__(self, color):
@@ -53,7 +59,9 @@ class Bishop(Piece):
             return True
         else:
             return False
-
+    def get_symbol(self):
+            return '♗' if self.color == 'white' else '♝'
+    
 class Queen(Piece):
     def __init__(self, color):
         super().__init__(color)
@@ -67,6 +75,8 @@ class Queen(Piece):
             return True
         else:
             return False
+    def get_symbol(self):
+            return '♕' if self.color == 'white' else '♛'
 
 class King(Piece):
     def __init__(self, color):
@@ -78,10 +88,5 @@ class King(Piece):
             return True
         else:
             return False
-
-
-white_King = King("white")
-print(white_King.color)
-print(white_King.validate_move(1, 2, 3, 2))  # True
-# print(white_pawn.validate_move(2, 2, 3, 2))  # True
-# print(white_pawn.validate_move(3, 2, 4, 2))  # False
+    def get_symbol(self):
+            return '♔' if self.color == 'white' else '♚'
