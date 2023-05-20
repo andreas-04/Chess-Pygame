@@ -11,8 +11,8 @@
         Use Unicode characters or ASCII art to represent the chess pieces.✅
 
     Implement chess piece movement:
-        Create classes for each chess piece type (pawn, rook, knight, bishop, queen, king).
-        Define methods for validating and executing legal moves for each piece.
+        Create classes for each chess piece type (pawn, rook, knight, bishop, queen, king).✅
+        Define methods for validating and executing legal moves for each piece. 1/2✅
         Implement functions to handle capturing pieces and en passant.
 
     Handle player input:

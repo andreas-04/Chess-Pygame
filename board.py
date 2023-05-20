@@ -33,7 +33,6 @@ class Board:
         piece = self.board[start_row][start_col]
 
         if piece is not None:
-            
             # Check if the move is valid using the piece's validate_move method
             if piece.validate_move(start_row, start_col, end_row, end_col):
                 # Move the piece
@@ -46,5 +45,5 @@ class Board:
 
 myB = Board()
 myB.display()
-myB.move_piece(1,4,2,4)
+myB.move_piece(1,4,3,4)
 myB.display()

@@ -6,19 +6,18 @@ class Pawn(Piece):
     def __init__(self, color):
         super().__init__(color)
         self.has_moved = False
+
     def validate_move(self, start_row, start_col, end_row, end_col):
-        direction = 1 if self.color == "white" else -1
-        row_diff = end_row - start_row
+        row_diff = abs(end_row - start_row)
         col_diff = abs(end_col - start_col)
 
-        if self.has_moved:
-            if col_diff == 0 and row_diff == direction:
-                return True
-        else:
-            if col_diff == 0 and (1 <= row_diff <= 2) and row_diff == direction:
-                return True
-
+        if col_diff == 0 and row_diff == 1:
+            return True
+        elif not self.has_moved and col_diff == 0 and (1 <= row_diff <= 2):
+            self.has_moved = True
+            return True
         return False
+
     def get_symbol(self):
         return '♙' if self.color == 'white' else '♟'
 
