@@ -29,21 +29,40 @@ class Board:
             print(row_str)
 
     def move_piece(self, start_row, start_col, end_row, end_col):
-        # Get the piece at the start position
         piece = self.board[start_row][start_col]
+        destination_piece = self.board[end_row][end_col]
 
-        if piece is not None:
-            # Check if the move is valid using the piece's validate_move method
-            if piece.validate_move(start_row, start_col, end_row, end_col):
-                # Move the piece
-                self.board[start_row][start_col] = None
-                self.board[end_row][end_col] = piece
-            else:
-                print("Invalid move!")
-        else:
+        if piece is None:
             print("No piece at the start position!")
+        elif destination_piece is not None and destination_piece.color == piece.color:
+            print("Destination square is occupied by a piece of the same color!")
+        elif piece.validate_move(start_row, start_col, end_row, end_col):
+            if destination_piece is not None and destination_piece.color != piece.color:
+                self.capture_piece(end_row, end_col)
+                
+            self.board[start_row][start_col] = None
+            self.board[end_row][end_col] = piece
+            piece.has_moved = True
+        else:
+            print("Invalid move!")
+
+    def capture_piece(self, row, col):
+        captured_piece = self.board[row][col]
+        captured_piece_color = captured_piece.color
+
+        self.board[row][col] = None
+        print(f"Captured {captured_piece_color} {type(captured_piece).__name__}!")
+    
 
 myB = Board()
 myB.display()
 myB.move_piece(1,4,3,4)
+myB.move_piece(6,4,4,4)
+myB.move_piece(0,3,2,5)
+myB.move_piece(2,5,6,5)
+
+
+
+
+
 myB.display()
