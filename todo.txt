@@ -12,8 +12,8 @@
 
     Implement chess piece movement:
         Create classes for each chess piece type (pawn, rook, knight, bishop, queen, king).✅
-        Define methods for validating and executing legal moves for each piece. 1/2✅
-        Implement functions to handle capturing pieces and en passant.
+        Define methods for validating and executing legal moves for each piece. ✅
+        Implement functions to handle capturing pieces and en passant.1/2✅
 
     Handle player input:
         Create a function to parse user input for moves (e.g., algebraic notation).
