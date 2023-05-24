@@ -4,20 +4,19 @@ Chess built in pygame
 # ToDo 
     Set up the project:
         Create a new Python project directory. ✅
-        Set up a virtual environment to manage dependencies.✅
 
     Define the chessboard:
-        Create a data structure to represent the chessboard (e.g., a 2D array, matrix, or nested lists).✅
+        Create a data structure to represent the chessboard ✅
         Initialize the chessboard with the starting position.✅
 
     Display the chessboard:
         Implement a function to print the chessboard to the console.✅
-        Use Unicode characters or ASCII art to represent the chess pieces.✅
+        Use Unicode characters or ASCII art to represent the chess pieces.✅❌
 
     Implement chess piece movement:
         Create classes for each chess piece type (pawn, rook, knight, bishop, queen, king).✅
         Define methods for validating and executing legal moves for each piece. ✅
-        Implement functions to handle capturing pieces and en passant.1/2✅
+        Implement functions to handle capturing pieces and en passant.⌛️✅
 
     Implement game logic:
         Define a game loop that alternates between players' turns.✅
